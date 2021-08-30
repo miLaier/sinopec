@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单中的元素都加上name属性才会进行提交 -->
+    <form action="" id="myForm">
+        <!-- placeholder：提示文本，提示占位-->
+        <!-- autofocus 自动获取焦点，不需要用户选中输入框-->
+        <!-- autocomplete：自动完成，提示补充输入内容。属性：on/off 
+            1. 必须成功提交过，这样才会有记录；
+            2. 当前添加粗通complete的元素必须有name属性-->
+        用户名：<input type="text" name="userName" value="" placeholder="请输入用户名" autofocus autocomplete="on"> <br>
+        <!-- tel 并不会实现验证，仅仅是在移动端能够弹出数字键盘 -->
+        <!-- required:必须输入，如果没有输入会组织当前数据的提交 -->
+        <!-- pattern:正则表达式验证
+            *   代表任意个
+            ？  代表0或1个
+            +   代表1个或多个 -->
+        手机号：<input type="tel" name="telnum" required pattern="^(\+86)?1[0-9]{10}$"><br>
+        <!-- multiple 可以选择多个文件-->
+        文件：<input type="file" name="photo" id="" multiple><br>
+        <!-- 邮箱有默认的验证，要包括@符号和域名。multiple属性允许输入多个邮箱，要用英文逗号分隔 -->
+        邮箱：<input type="email" name="userEmail" id="" multiple> <br>
+        <!-- 提交 -->
+        <input type="submit">
+    </form>
+    <!-- 下面这个元素并不在form标签中，默认情况下下面元素数据不会进行提交 -->
+    <!-- 属性form：指定已有表单的id，那么将来指定id号的表单进行元素提交的时候，也会将当前元素数据一起提交 -->
+    地址：<input type="text" name="address" id="" form="myForm">
+</body>
+</html>
