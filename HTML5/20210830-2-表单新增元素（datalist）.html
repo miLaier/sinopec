@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 学习要点：
+    1. 内容：可以用户输入内容的下拉列表定义
+    2. input与datalist标签关联的方法
+    3. 如果input标签的type属性值是‘url’，那么下拉列表中的option标签的value属性值必须是‘http://’开头的网址 -->
+<body>
+    <form action="">
+        <!--专业选择：
+        <select name="" id="">
+            <option value="1">前端与移动开发</option>
+            <option value="2">java</option>
+            <option value="3">javaScript</option>
+            <option value="4">C++</option>
+        </select> -->
+        <!-- select 元素只能用于选择，不支持用户输入 -->
+        <!-- 既支持选择,也支持用户输入的下拉列表:
+            1. 闯将输入框  &  1+.与datalist关联，list属性=“datalist的id号”
+            2. 通过datalist标签创建选择列表.
+                通过option创建选项值,value:具体的值,label:提示信息,辅助值.
+                * option 可以是双标签，也可以是单标签 -->
+        专业选择：
+        <input type="text" name="" id="" list="subop">
+        <datalist id="subop">
+            <option value="英语" label="一般" />
+            <option value="前端与移动开发" label="前景非常好"></option>
+            <option value="java" label="使用人数多"></option>
+            <option value="javaScript" label="做特效"></option>
+            <option value="c++" label="算法能力要求高"></option>
+        </datalist>
+
+        网址选择：
+        <!-- input 输入框的type属性是url，那么datalist中的option标签的value值必须添加‘http://’，不添加则解析不出来下拉列表 -->
+        <input type="url" name="" id="" list="urls">
+        <datalist id="urls">
+            <option value="http://www.baidu.com"></option>
+            <option value="http://www.sohu.com"></option>
+            <option value="http://www.163.com"></option>
+        </datalist>
+    </form>
+</body>
+</html>
