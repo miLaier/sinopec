@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 两种进度条标签
+    1. progress
+    2. meter -->
+<body>
+    <!-- progress：进度条颜色只有一个
+        属性 max：最大值 、 value：当前进度值 -->
+    <progress max="100" value="60"></progress><br>
+    <progress max="100" value="100"></progress><br>
+
+    <!-- meter:度量器，衡量当前进度值
+        属性：  high：设定的较高的值
+                low：设定的较低的值
+                max：最大值
+                min：最小值
+                value：当前度量值 -->
+    <meter min="0" max="100" low="40" high="80" value="30"></meter><br>
+    <meter min="0" max="100" low="40" high="80" value="60"></meter><br>
+    <meter min="0" max="100" low="40" high="80" value="90"></meter><br>
+</body>
+</html>

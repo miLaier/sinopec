@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    表单新增事件：
+    1. oninput 监听元素内容发生变化时触发
+    2. onkeyup  键盘按键弹起触发这个事件
+    3. oninvalid 
+
+    * 标签的pattern属性
+    * setCustomValidity函数，设置提示框中的文字。
+ -->
+<body>
+    <form action="">
+        用户名：<input type="text" name="userName" id="userName"> <br>
+        电话：<input type="tel" name="userPhone" id="userPhone" pattern="^1\d{10}?"> <br>
+        <input type="submit">
+    </form>
+
+    <script>
+        // 1.oninput:监听当前指定元素内容的改变（添加或删除内容），元素内容改变就会触发这个事件
+        document.getElementById("userName").oninput=function () {  
+            console.log("oninput: "+this.value);
+        }
+
+        // 2.onkeyup:键盘按键弹起触发这个事件
+        document.getElementById("userName").onkeyup=function () {  
+            console.log("onkeyup: "+this.value);
+        }
+
+        // 3.oninvalid:当前验证不通过时触发
+        document.getElementById("userPhone").oninvalid=function(){
+            // 设置默认提示信息
+            this.setCustomValidity("请输入合法的11位手机");
+        }
+    </script>
+</body>
+</html>
